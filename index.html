@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta Comercial Vincol</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,600;1,700;1,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--red:#dc2626;--red-deep:#a81b1b;--asphalt:#16171a;--tint:#eeeeeb;--line:#d8d8d3;--mute:#5d5e63;--ink:#16171a;}
+*{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+body{margin:0;background:#fff;color:var(--ink);font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,.num{font-family:'Barlow Condensed',sans-serif;margin:0;}
+a{color:inherit;}
+a:focus-visible{outline:3px solid var(--asphalt);outline-offset:3px;}
+.hero a:focus-visible,.cta a:focus-visible{outline-color:#fff;}
+img{display:block;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+
+.hero{background:var(--red);color:#fff;position:relative;overflow:hidden;}
+.hero-nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;gap:16px;}
+.hero-nav .by{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,.85);}
+.hero-body{padding:48px 0 150px;position:relative;z-index:1;}
+.hero h1{font-size:clamp(54px,9vw,104px);line-height:.92;font-weight:800;font-style:italic;max-width:10.5em;}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .08em .1em 0;margin:-.06em -.08em -.1em 0;}
+.hero h1 .w>span{display:inline-block;}
+.hero p{font-size:19px;max-width:34em;margin:24px 0 0;color:rgba(255,255,255,.9);}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;}
+.btn{display:inline-block;padding:15px 26px;font-weight:600;font-size:16px;text-decoration:none;border-radius:4px;}
+.btn-light{background:#fff;color:var(--red-deep);}
+.btn-line{border:2px solid rgba(255,255,255,.65);color:#fff;}
+.btn-red{background:var(--red);color:#fff;}
+.tread{position:absolute;left:0;right:0;bottom:0;height:72px;display:flex;background:rgba(0,0,0,.14);}
+.tread span{flex:1;}
+.tread span:first-child{background:repeating-linear-gradient(118deg,rgba(0,0,0,.3) 0 9px,transparent 9px 30px);}
+.tread span:last-child{background:repeating-linear-gradient(62deg,rgba(0,0,0,.3) 0 9px,transparent 9px 30px);}
+
+.scn{padding:96px 0;}
+.scn.alt{background:var(--tint);}
+.scn h2{font-size:clamp(44px,6.5vw,72px);line-height:.96;font-weight:800;font-style:italic;}
+.scn h2 .n{display:block;font-size:24px;font-style:normal;font-weight:600;color:var(--red);margin-bottom:8px;}
+.scn .sub{color:var(--mute);margin:16px 0 0;font-size:18px;max-width:40em;}
+.split{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:72px;align-items:center;margin-top:56px;}
+.split.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);}
+.legend{list-style:none;margin:0;padding:0;display:grid;gap:26px;}
+.legend li{display:flex;gap:16px;align-items:flex-start;font-size:18px;line-height:1.4;}
+.legend .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;margin-top:-2px;}
+.legend img{margin-top:10px;height:36px;width:auto;}
+.platform{display:inline-flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);padding:10px 22px;border-radius:4px;margin-top:26px;color:var(--mute);font-size:16px;}
+.platform img{height:34px;width:auto;}
+
+.browser{border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 26px 50px -30px rgba(22,23,26,.5);}
+.bar{display:flex;align-items:center;gap:6px;padding:11px 14px;background:#f3f3f1;border-bottom:1px solid var(--line);border-radius:9px 9px 0 0;}
+.bar i{width:9px;height:9px;border-radius:50%;background:#cfcfca;display:block;}
+.bar .url{flex:1;margin-left:10px;height:22px;border-radius:5px;background:#fff;border:1px solid var(--line);font-size:11px;color:var(--mute);padding:0 10px;display:flex;align-items:center;}
+.card .img{position:relative;aspect-ratio:1/1;background:var(--tint);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.card p{margin:8px 0 0;font-size:11px;font-weight:600;line-height:1.3;}
+.tire{width:68%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,#c9c9c4 0 15%,#7c7d80 15% 20%,#2a2b2e 20% 56%,transparent 56% 100%),repeating-conic-gradient(#16171a 0 12deg,#3a3b40 12deg 24deg);}
+.co{position:absolute;top:-10px;left:-10px;width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;box-shadow:0 0 0 3px #fff;z-index:2;}
+
+
+.need{margin-top:64px;}
+.need h3{font-size:clamp(30px,4vw,40px);font-weight:800;font-style:italic;line-height:1;}
+.need .checks{margin-top:22px;}
+.m-top{background:var(--asphalt);color:#fff;font-size:11px;text-align:center;padding:6px 0;}
+.m-nav{position:relative;display:flex;align-items:center;gap:18px;padding:14px 22px;border-bottom:1px solid var(--line);}
+.m-search{flex:1;display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:4px;padding:5px 5px 5px 12px;font-size:11px;color:var(--mute);}
+.m-search em{font-style:normal;background:var(--red);color:#fff;font-weight:600;padding:4px 12px;border-radius:3px;}
+.cart{width:26px;height:26px;border-radius:50%;background:var(--tint);color:var(--red);display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.m-cats{display:flex;gap:22px;padding:10px 22px;border-bottom:1px solid var(--line);font-size:11px;font-weight:600;color:var(--mute);white-space:nowrap;overflow:hidden;}
+.m-banner{position:relative;background:var(--red);color:#fff;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.m-banner b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:26px;font-style:italic;font-weight:800;line-height:1;}
+.m-banner .s{display:block;font-size:12px;margin-top:6px;opacity:.9;}
+.finder{display:flex;gap:6px;flex:0 0 auto;}
+.finder span{background:#fff;color:var(--mute);font-size:10px;padding:7px 12px;border-radius:3px;}
+.finder em{font-style:normal;background:var(--asphalt);color:#fff;font-size:10px;font-weight:600;padding:7px 12px;border-radius:3px;}
+.m-grid{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:20px 22px 24px;}
+.card .plus{position:absolute;right:6px;bottom:6px;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;line-height:1;}
+.card p.med{margin:1px 0 0;color:var(--mute);font-weight:500;}
+.card p.pr{margin:4px 0 0;color:var(--red);font-size:14px;font-weight:600;}
+.card p.pix{margin:1px 0 0;font-size:10px;color:var(--red-deep);font-weight:600;}
+.pdp{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:26px;padding:24px 22px 28px;align-items:start;}
+.pdp .img{aspect-ratio:1/1;background:var(--tint);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+.pdp .img .tire{width:74%;}
+.pdp h4{margin:0;font-family:'IBM Plex Sans',sans-serif;font-size:15px;font-weight:600;}
+.pdp .med{margin:2px 0 0;font-size:12px;color:var(--mute);}
+.pdp .big{margin:12px 0 0;font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:700;font-style:italic;color:var(--red);line-height:1;}
+.pdp .pixl{margin:2px 0 0;font-size:11px;color:var(--red-deep);font-weight:600;}
+.opt{position:relative;margin-top:16px;}
+.opt .rows{border:1px solid var(--line);border-radius:6px;}
+.opt .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;font-size:11px;font-weight:600;}
+.opt .row+.row{border-top:1px solid var(--line);}
+.opt .row i{font-style:normal;color:var(--mute);font-weight:500;}
+.pchips{display:flex;gap:6px;}
+.pchips b{flex:1;text-align:center;background:var(--tint);border-radius:4px;padding:7px 0;font-size:11px;font-weight:600;}
+.pbuy{margin-top:14px;background:var(--red);color:#fff;text-align:center;font-weight:600;font-size:13px;padding:11px 0;border-radius:4px;}
+.demo{margin:0;font-size:13px;color:var(--mute);}
+.or{position:relative;height:0;z-index:3;}
+.or span{position:absolute;left:50%;top:0;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#fff;border:7px solid var(--red);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;font-style:italic;color:var(--asphalt);}
+.plan{background:#fff;border:1px solid var(--line);border-top:6px solid var(--asphalt);margin-top:72px;}
+.plan-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;padding:32px 36px;border-bottom:1px solid var(--line);}
+.plan-head h3{font-size:clamp(34px,4vw,44px);font-weight:800;font-style:italic;line-height:1;}
+.plan-sub{margin:8px 0 0;color:var(--mute);font-size:15px;}
+.plan-price{text-align:right;}
+.plan-price .pp{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:700;font-style:italic;line-height:1;color:var(--ink);}
+.plan-price .pp span{font-size:20px;font-weight:500;font-style:normal;color:var(--mute);}
+.plan-price p{margin:6px 0 0;color:var(--mute);font-size:14px;}
+.plan-list{list-style:none;margin:0;padding:6px 36px 22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;}
+.plan-list li{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.35;}
+.plan-list svg{flex:0 0 auto;margin-top:2px;}
+.plan-note{margin:0;padding:14px 36px;background:var(--tint);border-top:1px solid var(--line);font-size:13px;color:var(--mute);}
+.dev{margin-top:80px;}
+.dev>h3{font-size:clamp(34px,4.5vw,48px);font-weight:800;font-style:italic;line-height:1;}
+.dev-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 64px;}
+.dev-group{margin-top:40px;border-top:4px solid var(--asphalt);padding-top:18px;}
+.dev-list{list-style:none;margin:14px 0 0;padding:0;}
+.dev-list li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding:13px 0;border-top:1px solid var(--line);}
+.dev-list strong{font-weight:600;font-size:16px;}
+.dev-list span{color:var(--mute);font-size:14px;text-align:right;}
+.dev-group h4{margin:0;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;font-style:italic;line-height:1.05;}
+.dev-group h4 small{font-family:'IBM Plex Sans',sans-serif;font-style:normal;font-weight:500;font-size:14px;color:var(--red);margin-left:8px;}
+.layers{margin:96px calc(50% - 50vw) 0;background:var(--asphalt);color:#fff;padding:96px 0;position:relative;overflow:hidden;}
+.layers::before{content:'';position:absolute;right:-160px;top:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--asphalt) 0 34%,transparent 34%),repeating-conic-gradient(rgba(255,255,255,.06) 0 9deg,transparent 9deg 18deg);}
+.layers .wrap{position:relative;}
+.layers h3{font-size:clamp(44px,6vw,76px);font-weight:800;font-style:italic;line-height:.95;}
+.layers-sub{margin:16px 0 0;color:rgba(255,255,255,.72);font-size:18px;max-width:34em;}
+.stack{margin-top:56px;display:grid;gap:10px;}
+.layer{display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,2.3fr);align-items:center;gap:28px;padding:26px 30px;background:#24252b;border-radius:6px;}
+.layer:nth-child(1){background:var(--red);margin-inline:60px;}
+.layer:nth-child(2){margin-inline:40px;}
+.layer:nth-child(3){margin-inline:20px;}
+.layer:nth-child(4){background:#2e2f36;}
+.l-ic{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;}
+.layer:nth-child(1) .l-ic{background:rgba(0,0,0,.16);}
+.l-head h4{margin:0;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;font-style:italic;line-height:1;}
+.l-head span{display:block;margin-top:8px;font-size:14px;color:rgba(255,255,255,.7);}
+.layer:nth-child(1) .l-head span{color:rgba(255,255,255,.88);}
+.l-items{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));}
+.l-items li{padding:4px 20px;border-left:1px solid rgba(255,255,255,.14);}
+.layer:nth-child(1) .l-items li{border-left-color:rgba(255,255,255,.32);}
+.l-items b{display:block;font-weight:600;font-size:16px;}
+.l-items span{display:block;margin-top:3px;font-size:14px;line-height:1.35;color:rgba(255,255,255,.72);}
+.layer:nth-child(1) .l-items span{color:rgba(255,255,255,.9);}
+.hub{margin:96px calc(50% - 50vw) 0;background:var(--asphalt);color:#fff;padding:96px 0;position:relative;overflow:hidden;}
+.hub::before{content:'';position:absolute;left:-180px;bottom:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--asphalt) 0 34%,transparent 34%),repeating-conic-gradient(rgba(255,255,255,.06) 0 9deg,transparent 9deg 18deg);}
+.hub .wrap{position:relative;}
+.hub h3{font-size:clamp(44px,6vw,76px);font-weight:800;font-style:italic;line-height:.95;}
+.hub-sub{margin:16px 0 0;color:rgba(255,255,255,.72);font-size:18px;max-width:34em;}
+.hub-grid{margin-top:72px;display:grid;grid-template-columns:minmax(0,1fr) 300px minmax(0,1fr);align-items:center;gap:0 72px;}
+.hub-col h4{margin:0 0 16px;font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:800;font-style:italic;line-height:1;}
+.hub-col.r h4{text-align:right;}
+.node{position:relative;display:flex;gap:16px;align-items:center;background:#24252b;border-radius:6px;padding:20px 22px;}
+.node+.node{margin-top:14px;}
+.hub-col.r .node{flex-direction:row-reverse;text-align:right;}
+.node::after{content:'';position:absolute;top:50%;width:72px;height:3px;margin-top:-1px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 8px,transparent 8px 16px);}
+.hub-col.l .node::after{left:100%;}
+.hub-col.r .node::after{right:100%;}
+.n-ic{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;}
+.node b{display:block;font-size:17px;font-weight:600;}
+.node span{display:block;margin-top:2px;font-size:14px;line-height:1.35;color:rgba(255,255,255,.72);}
+.core{position:relative;width:300px;height:300px;border-radius:50%;background:#fff;border:10px solid var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--mute);font-size:14px;text-align:center;}
+.core::before{content:'';position:absolute;inset:-28px;border-radius:50%;border:2px dashed rgba(255,255,255,.3);}
+.core .v{height:58px;width:auto;filter:brightness(0);}
+.core .nv{height:46px;width:auto;margin-top:-8px;}
+.core small{font-size:14px;margin-top:4px;}
+.checks{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0 32px;}
+.checks li{display:flex;align-items:flex-start;gap:12px;padding:15px 0;border-top:1px solid var(--line);font-weight:500;}
+.checks li svg{flex:0 0 auto;margin-top:3px;}
+.scn.alt .checks li{border-top-color:#cfcfca;}
+.route{--n:5;list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));position:relative;}
+.route::before{content:'';position:absolute;left:17px;right:calc(100% / var(--n) - 17px);top:15px;height:3px;transform-origin:left center;background:repeating-linear-gradient(90deg,#c4c4be 0 10px,transparent 10px 18px);}
+.route li{position:relative;font-weight:500;}
+.route .num{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--asphalt);color:#fff;font-size:20px;font-weight:700;margin-bottom:12px;}
+.route li:last-child .num{background:var(--red);}
+.price{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));background:var(--asphalt);color:#fff;margin-top:64px;}
+.price div{padding:30px 32px;border-left:1px solid rgba(255,255,255,.16);}
+.price div:first-child{border-left:0;background:var(--red);}
+.price small{display:block;font-size:15px;color:rgba(255,255,255,.75);}
+.price strong{display:block;font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:700;font-style:italic;line-height:1.05;}
+.price strong span{font-size:22px;font-weight:500;font-style:normal;color:rgba(255,255,255,.75);}
+
+
+.compare{padding:88px 0;}
+.compare h2{font-size:clamp(40px,5vw,56px);font-weight:800;font-style:italic;line-height:1;}
+table{width:100%;border-collapse:collapse;margin-top:32px;}
+th,td{text-align:left;padding:16px 22px;border-bottom:1px solid var(--line);font-size:16px;}
+thead th{background:var(--asphalt);color:#fff;font-weight:600;border-bottom:0;}
+tbody th{font-weight:600;width:28%;}
+
+.cta{background:var(--asphalt);color:#fff;padding:88px 0;}
+.cta .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px;}
+.cta img{height:26px;width:auto;margin-bottom:22px;}
+.cta h2{font-size:clamp(48px,7vw,84px);font-weight:800;font-style:italic;line-height:.95;}
+
+.foot{padding:26px 0;}
+.foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.foot .logos{display:flex;align-items:center;gap:16px;}
+.foot .logos img{filter:brightness(0);opacity:.6;}
+.foot .rule{width:1px;height:18px;background:var(--line);}
+.foot p{margin:0;font-size:13px;color:var(--mute);text-align:right;}
+
+@media (max-width:820px){
+  .wrap{padding:0 20px;}
+  .scn{padding:64px 0;}
+  .split,.split.flip{grid-template-columns:1fr;gap:44px;}
+  .hero-body{padding:32px 0 120px;}
+  .route{grid-template-columns:1fr;gap:16px;}
+  .route::before{display:none;}
+  .route li{display:flex;align-items:center;gap:14px;}
+  .route .num{margin-bottom:0;}
+  .price strong{font-size:48px;}
+  th,td{padding:12px 12px;font-size:14px;}
+  .foot p{text-align:left;}
+  .dev-grid{grid-template-columns:1fr;}
+  .hub{padding:64px 0;margin-top:72px;}
+  .hub-grid{grid-template-columns:1fr;gap:40px;margin-top:56px;}
+  .core{order:-1;margin:28px auto 0;width:240px;height:240px;}
+  .core .v{height:46px;}
+  .node::after{display:none;}
+  .hub-col.r h4{text-align:left;}
+  .hub-col.r .node{flex-direction:row;text-align:left;}
+  .layers{padding:64px 0;margin-top:72px;}
+  .stack .layer{margin-inline:0;grid-template-columns:56px minmax(0,1fr);gap:18px;padding:22px;}
+  .l-ic{width:56px;height:56px;}
+  .l-ic svg{width:26px;height:26px;}
+  .l-items{grid-column:1/-1;grid-template-columns:1fr;}
+  .l-items li{border-left:0 !important;border-top:1px solid rgba(255,255,255,.16);padding:12px 0;}
+  .m-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .m-banner{flex-direction:column;align-items:flex-start;}
+  .pdp{grid-template-columns:1fr;}
+  .plan-head{padding:24px;}
+  .plan-price{text-align:left;}
+  .plan-list{grid-template-columns:1fr;padding:6px 24px 18px;}
+  .plan-note{padding:14px 24px;}
+}
+
+.btn{transition:transform .2s ease,background-color .2s ease;}
+.btn:hover{transform:translateY(-2px);}
+.btn-light:hover{background:#f4f4f2;}
+.btn-red:hover{background:#ee3232;}
+.tire{transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.card .img img,.pdp .img img{width:88%;height:88%;object-fit:contain;mix-blend-mode:multiply;transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+.card:hover .img img{transform:scale(1.07) rotate(-3deg);}
+
+@media (prefers-reduced-motion:no-preference){
+  @keyframes rise{from{transform:translateY(110%);}to{transform:none;}}
+  @keyframes fadeup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  @keyframes fadein{from{opacity:0;}to{opacity:1;}}
+  @keyframes treadin{from{transform:translateY(100%);}to{transform:none;}}
+  @keyframes pop{0%{transform:scale(0);}70%{transform:scale(1.18);}100%{transform:scale(1);}}
+  @keyframes draw{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  @keyframes wipe{from{clip-path:inset(0 100% 0 0);}to{clip-path:inset(0 0 0 0);}}
+  @keyframes stop{from{transform:scale(.4);opacity:0;}to{transform:none;opacity:1;}}
+
+  .hero-nav{animation:fadein .6s .05s both;}
+  .hero h1 .w>span{animation:rise .85s cubic-bezier(.2,.7,.2,1) both;}
+  .hero h1 .w:nth-child(1)>span{animation-delay:.20s;}
+  .hero h1 .w:nth-child(2)>span{animation-delay:.27s;}
+  .hero h1 .w:nth-child(3)>span{animation-delay:.34s;}
+  .hero h1 .w:nth-child(4)>span{animation-delay:.41s;}
+  .hero h1 .w:nth-child(5)>span{animation-delay:.48s;}
+  .hero h1 .w:nth-child(6)>span{animation-delay:.55s;}
+  .hero h1 .w:nth-child(7)>span{animation-delay:.62s;}
+  .hero h1 .w:nth-child(8)>span{animation-delay:.69s;}
+  .hero h1 .w:nth-child(9)>span{animation-delay:.76s;}
+  .hero p{animation:fadeup .7s 1s both;}
+  .hero-cta{animation:fadeup .7s 1.15s both;}
+  .tread{animation:treadin .9s .55s cubic-bezier(.2,.7,.2,1) both;}
+
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes flowr{to{background-position:16px 0;}}
+  @keyframes flowl{to{background-position:-16px 0;}}
+  @keyframes nodeinr{from{opacity:0;transform:translateX(48px);}to{opacity:1;transform:none;}}
+  .core::before{animation:spin 40s linear infinite;}
+  .hub-col.l .node::after{animation:flowr .9s linear infinite;}
+  .hub-col.r .node::after{animation:flowl .9s linear infinite;}
+
+  @supports (animation-timeline:view()){
+    .route::before{animation:draw linear both;animation-timeline:view();animation-range:entry 10% entry 90%;}
+    .route li .num{animation:stop linear both;animation-timeline:view();}
+    .route li:nth-child(1) .num{animation-range:entry 10% entry 40%;}
+    .route li:nth-child(2) .num{animation-range:entry 25% entry 55%;}
+    .route li:nth-child(3) .num{animation-range:entry 40% entry 70%;}
+    .route li:nth-child(4) .num{animation-range:entry 55% entry 85%;}
+    .route li:nth-child(5) .num{animation-range:entry 65% entry 100%;}
+    .price div{animation:wipe linear both;animation-timeline:view();animation-range:entry 0% entry 60%;}
+    .price div:nth-child(2){animation-range:entry 10% entry 70%;}
+    .price div:nth-child(3){animation-range:entry 20% entry 80%;}
+    @keyframes layerin{from{opacity:0;transform:translateX(-48px);}to{opacity:1;transform:none;}}
+    .layer{animation:layerin linear both;animation-timeline:view();animation-range:entry 0% entry 55%;}    .hub-col.l .node{animation:layerin linear both;animation-timeline:view();animation-range:entry 0% entry 55%;}
+    .hub-col.r .node{animation:nodeinr linear both;animation-timeline:view();animation-range:entry 0% entry 55%;}    .co{animation:pop linear both;animation-timeline:view();animation-range:entry 30% entry 90%;}
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-nav">
+        <img src="logo.png" alt="Vincol" style="height:56px;width:auto;">
+        <div class="by"><span>uma proposta da</span><img src="linkeed-logo.png" alt="Linkeed" style="height:18px;width:auto;"></div>
+      </div>
+      <div class="hero-body">
+        <h1><span class="w"><span>Duas</span></span> <span class="w"><span>formas</span></span> <span class="w"><span>de</span></span> <span class="w"><span>evoluir</span></span> <span class="w"><span>a</span></span> <span class="w"><span>loja</span></span> <span class="w"><span>online</span></span> <span class="w"><span>da</span></span> <span class="w"><span>Vincol</span></span></h1>
+        <p>Um ecommerce próprio ou a Nuvemshop personalizada. Veja os dois cenários e escolha o caminho.</p>
+        <div class="hero-cta">
+          <a class="btn btn-light" href="#cenario1">Ver o cenário 1</a>
+          <a class="btn btn-line" href="#cenario2">Ver o cenário 2</a>
+        </div>
+      </div>
+    </div>
+    <div class="tread"><span></span><span></span></div>
+  </header>
+
+  <section class="scn" id="cenario1">
+    <div class="wrap">
+      <h2><span class="n">Cenário 1</span>Ecommerce próprio</h2>
+      <p class="sub">Uma loja sob medida, com a cara da Vincol.</p>
+
+      <div class="split">
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><div class="url">vincol.com.br</div></div>
+          <div class="m-top">Frete grátis em pneus selecionados</div>
+          <div class="m-nav">
+            <span class="co">1</span>
+            <img src="logo.png" alt="Vincol" style="height:20px;width:auto;filter:brightness(0);">
+            <div class="m-search"><span>Busque por medida, aro ou placa</span><em>Buscar</em></div>
+            <span class="cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></span>
+          </div>
+          <div class="m-cats"><span>Carro</span><span>Caminhão e ônibus</span><span>Moto</span><span>Serviços</span><span>Ofertas</span></div>
+          <div class="m-banner">
+            <span class="co">2</span>
+            <div><b>10% off no Pix ou 12x sem juros</b><span class="s">Pneus para todo tipo de veículo</span></div>
+            <div class="finder"><span>Largura</span><span>Perfil</span><span>Aro</span><em>Buscar</em></div>
+          </div>
+          <div class="m-grid">
+            <span class="co">3</span>
+            <div class="card"><div class="img"><img src="pneu1.webp" alt="Pneu aro 15"><span class="plus">+</span></div><p>Pneu Aro 15</p><p class="med">31x10.50 R15</p><p class="pr">R$ 290</p><p class="pix">10% off no Pix</p></div>
+            <div class="card"><div class="img"><img src="pneu2.webp" alt="Pneu aro 16"><span class="plus">+</span></div><p>Pneu Aro 16</p><p class="med">205/55 R16</p><p class="pr">R$ 320</p><p class="pix">10% off no Pix</p></div>
+            <div class="card"><div class="img"><img src="pneu3.webp" alt="Pneu aro 17"><span class="plus">+</span></div><p>Pneu Aro 17</p><p class="med">225/45 R17</p><p class="pr">R$ 380</p><p class="pix">10% off no Pix</p></div>
+            <div class="card"><div class="img"><img src="pneu4.webp" alt="Pneu aro 18"><span class="plus">+</span></div><p>Pneu Aro 18</p><p class="med">235/50 R18</p><p class="pr">R$ 410</p><p class="pix">10% off no Pix</p></div>
+          </div>
+        </div>
+
+        <div>
+          <ol class="legend">
+            <li><span class="num">1</span>Busca por medida, aro ou placa e menu por categoria</li>
+            <li><span class="num">2</span>Banner promocional com buscador de pneu</li>
+            <li><span class="num">3</span>Vitrine com medida, preço e compra rápida</li>
+          </ol>
+          <p class="demo" style="margin-top:28px;">Exemplo ilustrativo, com valores de teste.</p>
+        </div>
+      </div>
+
+      <div class="layers">
+        <div class="wrap">
+          <h3>O que será desenvolvido</h3>
+          <p class="layers-sub">Quatro camadas que formam a loja da Vincol, da tela que o cliente vê até a base que protege tudo.</p>
+          <div class="stack">
+            <div class="layer">
+              <div class="l-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="14" height="11" rx="1.5"></rect><path d="M6 19h6"></path><path d="M9 15v4"></path><rect x="17" y="8" width="5" height="12" rx="1.2"></rect></svg></div>
+              <div class="l-head"><h4>Identidade visual e layout</h4><span>Frontend, o que o cliente vê</span></div>
+              <ul class="l-items">
+                <li><b>Design responsivo</b><span>Celular, tablet e computador</span></li>
+                <li><b>UX e UI</b><span>Menus claros e busca inteligente</span></li>
+                <li><b>Páginas essenciais</b><span>Home, categorias, produto, carrinho e checkout</span></li>
+              </ul>
+            </div>
+            <div class="layer">
+              <div class="l-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path></svg></div>
+              <div class="l-head"><h4>Funcionalidades da loja</h4><span>Backend, o que faz a loja funcionar</span></div>
+              <ul class="l-items">
+                <li><b>Catálogo</b><span>Variações, fotos e estoque</span></li>
+                <li><b>Checkout</b><span>Página única, menos abandono</span></li>
+                <li><b>Painel do cliente</b><span>Pedidos, histórico e dados</span></li>
+              </ul>
+            </div>
+            <div class="layer">
+              <div class="l-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"></path></svg></div>
+              <div class="l-head"><h4>Integrações fundamentais</h4><span>Conexão com outros sistemas</span></div>
+              <ul class="l-items">
+                <li><b>Pagamento</b><span>Pix, cartão e boleto</span></li>
+                <li><b>Frete</b><span>Correios e Melhor Envio</span></li>
+                <li><b>ERP e CRM</b><span>Bling ou Tiny, nota fiscal e estoque</span></li>
+              </ul>
+            </div>
+            <div class="layer">
+              <div class="l-ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+              <div class="l-head"><h4>Segurança, SEO e infraestrutura</h4><span>A base que protege e mede tudo</span></div>
+              <ul class="l-items">
+                <li><b>SSL</b><span>HTTPS em toda a loja</span></li>
+                <li><b>SEO</b><span>Títulos, descrições e URLs limpas</span></li>
+                <li><b>Análise</b><span>Analytics, Tag Manager e Pixel do Meta</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ol class="route">
+        <li><div class="num">1</div>Planejamento</li>
+        <li><div class="num">2</div>Design</li>
+        <li><div class="num">3</div>Desenvolvimento</li>
+        <li><div class="num">4</div>Testes</li>
+        <li><div class="num">5</div>Lançamento</li>
+      </ol>
+
+      <div class="price">
+        <div><small>Investimento</small><strong>R$ 40.000</strong></div>
+        <div><small>Manutenção</small><strong>R$ 800<span> /mês</span></strong></div>
+        <div><small>Prazo</small><strong>5 meses</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="or" role="separator" aria-label="ou"><span>ou</span></div>
+
+  <section class="scn alt tint-bg" id="cenario2">
+    <div class="wrap">
+      <h2><span class="n">Cenário 2</span>Nuvemshop personalizada</h2>
+      <p class="sub">Loja com cara própria, frete e pagamento no lugar.</p>
+      <div class="platform"><span>Sua loja rodando na</span><img src="nuvemshop-logo.png" alt="Nuvemshop"></div>
+
+      <div class="split flip">
+        <div>
+          <ol class="legend">
+            <li><span class="num">1</span><div>Tema com a identidade da Vincol, personalizado dentro da<img src="nuvemshop-logo.png" alt="Nuvemshop"></div></li>
+            <li><span class="num">2</span>Frete calculado pelo Melhor Envio</li>
+            <li><span class="num">3</span>Pagamento por cartão, Pix ou boleto</li>
+          </ol>
+          <p class="demo" style="margin-top:28px;">Exemplo ilustrativo, com valores de teste.</p>
+        </div>
+
+        <div class="browser">
+          <div class="bar"><i></i><i></i><i></i><div class="url">vincol.com.br/pneus/aro16</div></div>
+          <div class="m-top">Frete grátis em pneus selecionados</div>
+          <div class="m-nav">
+            <span class="co">1</span>
+            <img src="logo.png" alt="Vincol" style="height:20px;width:auto;filter:brightness(0);">
+            <div class="m-search"><span>Busque por medida, aro ou placa</span><em>Buscar</em></div>
+            <span class="cart"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></span>
+          </div>
+          <div class="m-cats"><span>Carro</span><span>Caminhão e ônibus</span><span>Moto</span><span>Serviços</span><span>Ofertas</span></div>
+          <div class="pdp">
+            <div class="img"><img src="pneu2.webp" alt="Pneu aro 16"></div>
+            <div>
+              <h4>Pneu Aro 16</h4>
+              <p class="med">205/55 R16</p>
+              <p class="big">R$ 320</p>
+              <p class="pixl">10% off no Pix</p>
+              <div class="opt">
+                <span class="co">2</span>
+                <div class="rows">
+                  <div class="row"><span>Entrega padrão</span><i>3 dias úteis</i><span>R$ 24,90</span></div>
+                  <div class="row"><span>Entrega expressa</span><i>1 dia útil</i><span>R$ 39,90</span></div>
+                </div>
+              </div>
+              <div class="opt" style="margin-top:12px;">
+                <span class="co">3</span>
+                <div class="pchips"><b>Cartão</b><b>Pix</b><b>Boleto</b></div>
+              </div>
+              <div class="pbuy">Comprar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hub">
+        <div class="wrap">
+          <h3>O que será feito</h3>
+          <p class="hub-sub">Personalização e integrações conectadas à loja da Vincol dentro da Nuvemshop.</p>
+          <div class="hub-grid">
+            <div class="hub-col l">
+              <h4>Personalização</h4>
+              <div class="node"><div class="n-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r="1.5"></circle><circle cx="17.5" cy="10.5" r="1.5"></circle><circle cx="8.5" cy="7.5" r="1.5"></circle><circle cx="6.5" cy="12.5" r="1.5"></circle><path d="M12 2a10 10 0 0 0 0 20c1 0 1.7-.8 1.7-1.7 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.8-1.7 1.7-1.7h2A5.5 5.5 0 0 0 22 11c0-5-4.5-9-10-9z"></path></svg></div><div><b>Tema da loja</b><span>Logo, cores e fontes da Vincol</span></div></div>
+              <div class="node"><div class="n-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l7 17 2.5-7.5L21 11z"></path></svg></div><div><b>UX de conversão</b><span>Navegação e compra mais simples</span></div></div>
+            </div>
+            <div class="core">
+              <img class="v" src="logo.png" alt="Vincol">
+              <small>sua loja rodando na</small>
+              <img class="nv" src="nuvemshop-logo.png" alt="Nuvemshop">
+            </div>
+            <div class="hub-col r">
+              <h4>Integrações</h4>
+              <div class="node"><div class="n-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg></div><div><b>Melhor Envio</b><span>Frete calculado automaticamente</span></div></div>
+              <div class="node"><div class="n-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg></div><div><b>Gateway de pagamento</b><span>Pix, cartão e boleto</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="plan">
+        <div class="plan-head">
+          <div>
+            <h3>Plano Escala</h3>
+            <p class="plan-sub">Plano da Nuvemshop indicado para a loja da Vincol</p>
+          </div>
+          <div class="plan-price">
+            <div class="pp">R$ 449<span> /mês</span></div>
+            <p>ou R$ 382/mês no plano anual (R$ 4.580 por ano, 15% de desconto)</p>
+          </div>
+        </div>
+        <ul class="plan-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>IA ilimitada</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Controle de equipe e permissões</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Estatísticas avançadas ilimitadas</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Suporte por email, WhatsApp e telefone</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>+70 layouts profissionais</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>+20 opções de pagamento</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Nuvem Envio com 3 centros de distribuição</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Analytics avançado</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Ações em massa</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Filtros inteligentes</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Venda multicanal</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Nuvem Chat a R$ 0,80 por conversa</li>
+        </ul>
+        <p class="plan-note">Taxa por venda: Nuvem Pago 3,29%. Outros meios de pagamento: taxa do meio mais 0,7%. Valores do site da Nuvemshop.</p>
+      </div>
+
+      <div class="need">
+        <h3>O que é necessário</h3>
+        <ul class="checks">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Plano Escala contratado na Nuvemshop</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Domínio da loja</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Logo, cores e fotos dos produtos da Vincol</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Conta no gateway de pagamento escolhido</li>
+        </ul>
+      </div>
+
+      <ol class="route" style="--n:3;">
+        <li><div class="num">1</div>Planejamento</li>
+        <li><div class="num">2</div>Integrações</li>
+        <li><div class="num">3</div>Lançamento</li>
+      </ol>
+
+      <div class="price">
+        <div><small>Investimento</small><strong>R$ 8.000</strong></div>
+        <div><small>Prazo</small><strong>45 dias</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare">
+    <div class="wrap">
+      <h2>Comparativo</h2>
+      <table>
+        <thead><tr><th>Critério</th><th>Ecommerce</th><th>Nuvemshop</th></tr></thead>
+        <tbody>
+          <tr><th>Investimento</th><td>R$ 40.000</td><td>R$ 8.000</td></tr>
+          <tr><th>Manutenção</th><td>R$ 800/mês</td><td>a combinar</td></tr>
+          <tr><th>Prazo</th><td>5 meses</td><td>45 dias</td></tr>
+          <tr><th>Plataforma</th><td>Loja própria</td><td>Nuvemshop, plano Escala</td></tr>
+          <tr><th>Ideal para</th><td>Controle total</td><td>Agilidade</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div>
+        <img src="linkeed-logo.png" alt="Linkeed">
+        <h2>Vamos conversar?</h2>
+      </div>
+      <a class="btn btn-red" href="mailto:davi@linkeed.com.br?subject=Proposta%20Vincol">Falar com a Linkeed</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="logos">
+        <img src="logo.png" alt="Vincol" style="height:22px;width:auto;">
+        <div class="rule"></div>
+        <img src="linkeed-logo.png" alt="Linkeed" style="height:15px;width:auto;">
+      </div>
+      <p><span style="display:block;">Proposta da Linkeed para a Vincol</span><span style="display:block;">Válida até 01/10/2026</span></p>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
